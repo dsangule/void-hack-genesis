@@ -1,8 +1,14 @@
+
+## Team
+Team name: Void
+Team members:
+- Devansh Sangule
+- Ritanshu Prasad
+- Anurudh Singh
+
 ## Overview
 
 The Emergency Response System is a cutting-edge platform designed to streamline emergency response procedures, minimize response time, and ensure effective care for individuals in critical situations. Leveraging advanced technologies and a user-centric approach, our system facilitates seamless communication and coordination among responders, healthcare professionals, and bystanders. By providing real-time information exchange, multimedia capture capabilities, and user-friendly interfaces, we aim to optimize resource deployment and ultimately save lives during crises.
-
----
 
 ## Key Features
 
@@ -22,17 +28,16 @@ The Emergency Response System is a cutting-edge platform designed to streamline 
 - **Geolocation:** Browser Geolocation API for retrieving the user's geographical location
 - **Deployment:** Vercel Hosting for seamless deployment to production
 
----
-
 ## Getting Started
+
 To get started with the Emergency Response System, follow these steps:
+
 - Clone the repository: `git clone https://github.com/dsangule/void-hack-genesis.git`
 - Install dependencies: `npm install`
 - Start the development server: `npm run dev`
 
----
-
 ## Contributing
+
 We welcome contributions from the community to enhance the Emergency Response System. If you'd like to contribute, please follow these guidelines:
 
 - Fork the repository and create your branch: `git checkout -b feature/your-feature`
