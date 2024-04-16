@@ -1,7 +1,6 @@
 
 ## Team
 Team name: Void
-Team members:
 - Devansh Sangule
 - Ritanshu Prasad
 - Anurudh Singh
