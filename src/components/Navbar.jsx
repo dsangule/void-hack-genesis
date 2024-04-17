@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 py-4">
+    <nav className="bg-gray-800 py-4 px-[3%]">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
@@ -19,11 +19,6 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/about">
-              <span className="text-white hover:text-gray-300 cursor-pointer">About Us</span>
-            </Link>
-          </li>
-          <li>
             <Link href="/services">
               <span className="text-white hover:text-gray-300 cursor-pointer">Services</span>
             </Link>
@@ -31,11 +26,6 @@ const Navbar = () => {
           <li>
             <Link href="/resources">
               <span className="text-white hover:text-gray-300 cursor-pointer">Resources</span>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <span className="text-white hover:text-gray-300 cursor-pointer">Contact Us</span>
             </Link>
           </li>
         </ul>
