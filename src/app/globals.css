@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	font-family: 'Skyscapers';
+	src: url('//2ttf.com/webfont/6IF8GLA3aiM/webfont.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', sans-serif;
+    /* font-family: 'Skyscrapers'; */
+}
