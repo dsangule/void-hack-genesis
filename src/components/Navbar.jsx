@@ -18,11 +18,11 @@ const Navbar = () => {
               <span className="text-white hover:text-gray-300 cursor-pointer">Home</span>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/services">
               <span className="text-white hover:text-gray-300 cursor-pointer">Services</span>
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/resources">
               <span className="text-white hover:text-gray-300 cursor-pointer">Resources</span>
