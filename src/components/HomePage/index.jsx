@@ -1,7 +1,41 @@
+"use client";
 import Navbar from "../Navbar"
+import { useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 
 function HomePage() {
 
+  const Map = useMemo(() => dynamic(
+    () => import('@/components/Map'),
+    { 
+      loading: () => <p>A map is loading</p>,
+      ssr: false
+    }
+  ), [])
+
+  const [mensen, setMensen] = useState([]);
+  const [location, setLocation] = useState([]);
+
+  const fetchApiData = async ({ latitude, longitude }) => {
+      const res = await fetch(`https://openmensa.org/api/v2/canteens?near[lat]=${latitude}&near[lng]=${longitude}&near[dist]=50000`);
+      const data = await res.json();
+      setMensen(data);
+  };
+
+  useEffect(() => {
+      if('geolocation' in navigator) {
+          navigator.geolocation.getCurrentPosition(({ coords }) => {
+              const { latitude, longitude } = coords;
+              setLocation([ latitude, longitude ]);
+          })
+      }
+  }, []);
+
+  useEffect(() => {
+    if (location) {
+        fetchApiData(location);
+    }
+  }, [location]);
 
   return (
     <div className="bg-[url('/emergency-bg.png')] bg-fixed h-screen overflow-scroll overflow-x-hidden">
@@ -11,8 +45,7 @@ function HomePage() {
           some tittle like welcome or emergency
         </p>
         <p className="text-justify">
-          The SOS button serves as a direct link to the vehicle's emergency assistance system. When you press it, you are immediately connected to a 24/7 response center. An agent at the dispatch center receives your call and assesses the situation. They can then dispatch the necessary emergency service providers to your precise location. Simultaneously, the system uses GPS technology to determine your exact position.
-          The GPS coordinates are transmitted to the operator, eliminating the need for you to know your location. Ambulance Services: If you or someone else requires medical attention.Hospital Directions: While it doesn't directly show nearby hospitals, the dispatched emergency services can guide you to the nearest medical facility. Remember, pressing the red SOS button should be reserved for genuine emergencies. It's a powerful tool that can save lives by swiftly connecting you to the help you need when seconds count.
+          "HealthTrackers" is a user-friendly website dedicated to locating nearby healthcare services and offering essential information on common emergency procedures. It simplifies the process of finding hospitals, urgent care centers, and pharmacies based on proximity, ensuring quick access to medical assistance. Beyond listings, it provides clear instructions and visual aids for emergencies like CPR, burns, and allergic reactions, empowering users to act confidently in critical situations. Real-time updates and personalized features enhance user safety and convenience, making HealthTrackers an indispensable tool for staying informed and prepared during healthcare emergencies, whether at home or on the go.
         </p>
         <center>
           <button className="w-36 h-12 rounded-2xl bg-red-600 text-3xl font-bold text-white mt-5">
@@ -20,6 +53,7 @@ function HomePage() {
           </button>
         </center>
       </div>
+      <Map position={location} zoom={14} />
     </div>
   )
 }
