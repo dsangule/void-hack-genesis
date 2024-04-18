@@ -41,8 +41,11 @@ function HomePage() {
     <div className="bg-[url('/emergency-bg.png')] bg-fixed h-screen overflow-scroll overflow-x-hidden">
       <Navbar />
       <div className="bg-white bg-opacity-70 w-3/4 max-h-3/4 mx-auto mt-[10vh] mb-4 px-24 py-[5vw]">
-        <p className="font-bold text-xl mb-5 text-center">
-          some tittle like welcome or emergency
+        <p className=" text-xl mb-5 text-center" style={{
+          fontSize:'55px',
+          fontWeight: 'bold'
+        }}>
+         First Responders Alliance
         </p>
         <p className="text-justify">
           "HealthTrackers" is a user-friendly website dedicated to locating nearby healthcare services and offering essential information on common emergency procedures. It simplifies the process of finding hospitals, urgent care centers, and pharmacies based on proximity, ensuring quick access to medical assistance. Beyond listings, it provides clear instructions and visual aids for emergencies like CPR, burns, and allergic reactions, empowering users to act confidently in critical situations. Real-time updates and personalized features enhance user safety and convenience, making HealthTrackers an indispensable tool for staying informed and prepared during healthcare emergencies, whether at home or on the go.

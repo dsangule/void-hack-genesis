@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
-          <span className="text-white text-xl font-bold">Emergency Response System</span>
+          <span className="text-white text-xl font-bold">First Responders Alliance</span>
         </Link>
 
         {/* Navbar Items */}
